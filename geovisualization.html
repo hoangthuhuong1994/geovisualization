@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- unvisible page defintion -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Geovisualization</title>	
+		<link rel="stylesheet" href="waters/light.css">
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="index.css"> 
+		<link rel="stylesheet" href="w3menu.css">
+		<link rel="stylesheet" href="header.css">
+		<link rel="stylesheet" href="./prism/prism.css">
+		<link rel="stylesheet" href="overlay.css">
+		<script src="overlay.js"></script>
+		<script src="w3menu.js"></script>
+		<script src="./prism/prism.js"></script>
+   		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+	</head>
+	<body>
+		<nav class="topnav" id="myTopnav">
+			<a href="index.html">Home</a>
+			<a href="web.html">Web-Development</a>
+			<a class="active" href="#">Geovisualization</a>
+			<a href="gis.html">GIS</a>
+			<a href="flood.html">Flood Risk Mapping</a>
+			<a href="rusle.html">RUSLE</a>
+			<a href="conclusions.html">Conclusions</a>
+			<a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+				<i class="fa fa-bars"></i>
+			</a>
+		</nav>
+
+	<article>
+        <section id="html-section">
+			<h1>Introduction to Geovisualization</h1>
+			<h2>What is Geovisualization</h2>
+			<p>According to Mike J. Smith <q class="footnote indirect" cite="https://doi.org/10.1016/B978-0-12-818234-5.00147-4" title="Geovisualization"></q>, <strong>Geovisualization</strong> deals with the development of theories, methods and tools for the visual exploration, analysis, synthesis and presentation of spatial data for specific applications and users. Visualization is the convergence of computer graphics, image processing, computer vision, computer-aided design, signal processing, and user interface studies.</p>			
+			<p><strong>Visualization</strong> is the convergence of computer graphics, image processing, computer vision, computer-aided design, signal processing, and user interface studies (McCormick, B.H., DeFanti, T.A., and Brown, M.D. (Eds.). 1987) <q class="footnote indirect" cite="https://www.sci.utah.edu/vrc2005/McCormick-1987-VSC.pdf" title="Visualization in Scientific Computing"></q>.</p>
+			<p><strong>Scientific visualization</strong> tools support knowledge creation and hypothesis generation (MacEachren, A.M. and Kraak, M.J. 1997) <q class="footnote indirect" cite="http://dx.doi.org/10.1002/9780470979587.ch11" title="Exploratory Cartographic Visualisation: Advancing the Agenda"></q>.</p>
+			<h2>Purposes of Geovisualization</h2>
+			<p>Geovisualization is crucial as it enhances data understanding by visually representing complex spatial information, aids decision-making processes by enabling interactive exploration and analysis, improves communication of spatial data to diverse audiences, drives innovation in various fields, facilitates exploration of multidimensional data, and enhances overall efficiency in tasks related to spatial data analysis and decision-making.</p>
+			<figure id="avi13">
+				<img src="images/geovisualization/central_diagonal.png" width="40%" height="40%">
+				<figcaption>Figure 1: The purposes of geovisualization from exploration to communication illustrated in the geovisualization cube (from MacEachren & Kraak 2001)  <q class="footnote indirect" cite="https://www.researchgate.net/publication/313573280_Research_challenges_in_geovisualization_Cartography_Geograph" title="Research challenges in geovisualization. Cartography Geograph."></q>.</figcaption>
+			</figure>
+			<h2>Challenges in the field of Geovisualization</h2>
+			<ul>
+				<li>Big Data: High dens measurements from space over long periods of time.</li>
+				<li>Complexity and Heterogeneity: Integration of data from different sources, multidimensional data.</li>
+				<li>Dynamics: Analysis and exploration of spatiotemporal changes.</li>
+				<li>Usability and ease of use: Users are not Programmers</li>
+				<li>New hardware and technologies: from Desktop to mobile, from Screen to Virtual Worlds.</li>
+			</ul>
+			<figure id="avi14">
+				<img src="images/geovisualization/data_cube.png" width="80%" height="80%">
+				<figcaption>Figure 3: The Data Cube: Time-series multidimensional (space, time, data types) data stack <q class="footnote indirect" cite="http://www.itu.int/net4/wsis/forum/2018/" title="Time-series multidimensional"></q>.</figcaption>
+			</figure>
+		</section>
+	
+			
+		<script>
+		document.querySelectorAll("code.language-markup, code.language-html")
+			.forEach( 
+				function(element) {
+					element.innerHTML = element.innerHTML.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+				}
+		);
+		</script>
+		<script src="cite/citr.js"></script>
+	</article>  	
+	</body>
+</html>

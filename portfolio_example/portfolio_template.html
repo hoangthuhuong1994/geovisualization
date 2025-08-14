@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water.css</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="waters/light.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="w3menu.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="./prism/prism.css">
+    <script src="./prism/prism.js"></script>
+    <!--link rel="stylesheet" href="./highlight/styles/default.css">
+    <script src="./highlight/highlight.min.js"></script-->
+    <script src="w3menu.js"></script>
+    <!--script>hljs.highlightAll();</script-->
+    <link rel="stylesheet" href="overlay.css">
+    <script src="overlay.js"></script>
+</head>
+<body>
+    <!-- <header> is used for the topnav menu 
+        and section with id=header for the image/title -->
+    <header>
+        <nav class="topnav" id="myTopnav">
+            <a class="active" href="#">Home</a>
+            <a href="portfolio_tutorial.html">Tutorial</a>
+            <a href="iframe_content.html">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+                <i class="fa fa-bars"></i></a>
+
+        </nav>
+        <section id="header">
+        <h1>Geovisualization</h1>
+        <h2>Portfolio Winter 2023/2024</h2>
+        </section>
+        
+    </header>
+    
+    <!-- <article> is used for the main page content
+            using different sections, where the section with id="authors" stands out for author information -->
+    <article>
+        <hr>
+        <section id="authors" class="columns">
+            
+            <div class="col box">
+            <p>Author:<br>
+            Andreas Müller<br>
+            Universität Trier<br>        
+            <i class="fa fa-envelope-o" aria-hidden="true"></i> muellea@uni-trier.de
+            </p>
+            </div>
+            
+            <div class="col box">
+            <p>
+            Co-Author:<br>
+            Andreas Müller<br>
+            Universität Trier
+            </p>
+            </div>
+            
+            <!--div class="col box">
+            <p>
+            Co-Author:<br>
+            Andreas Müller<br>
+            Universität Trier
+            </p>
+            </div>
+            
+            <div class="col box">
+            <p>
+            Co-Author:<br>
+            Andreas Müller<br>
+            Universität Trier
+            </p>
+            </div-->
+        </section>
+        <hr>
+        
+        <section>
+        <h1>HTML</h1> 
+        <p>This HTML document uses <a href="https://www.w3schools.com/html/html5_semantic_elements.asp">semantic elements</a> where ever it is possible. Semantic elements are used to structure the documents in meaningful parts and to improve the readability of the code. So you'll find </p>
+        <ul>
+        <li>a &lt;header>,</li> 
+        <li>a &lt;nav>(igation),</li> 
+        <li>an &lt;article> and</li> 
+        <li>some &lt;sections></li>
+        </ul>
+        
+        <p>Each of the parts has a predefined format, a css-style, sometimes there are variants of the styling by using css-selectors and attributes (class or id). But mainly it was tried to avoid too many styling variants, so the HTML-code stays clean and we can concentrate on the content, not so much on the formatting.</p>
+        
+        </section>
+        
+        <section>
+            <h1>Water.css</h1> 
+            <p> The basis of the layout and formatting for Portfolio-Template is Water.css, you'll find the source <a href="https://github.com/kognise/water.css">on github</a>. </p>
+            <blockquote class="footnote" cite="https://watercss.kognise.dev/" title="Website 'Water.css'">
+            <p>Water.css is a drop-in collection of CSS styles to make simple websites like this just a little bit nicer.</p>
+            </blockquote>
+            
+            <p>There are preformatted styles for most of the HTML-tags. There is an additional css file included into this page: main.css. It is based on water.css but defines divergend and new styles for the portfolio. Below you'll find some examples of HTML-elements and how they look.</p>
+            
+            <p class="box">Tip: Use the inspection tool of your browser to see the underlaying code and css definitions. In Firefox this is a right click on the part you want to explore and then press 'Q' on the keyboard to open a window with the development tools.</p>
+            
+            <h2>Displaying images</h2>
+            <figure>
+                <img alt="image" src="images/water.jpg">
+                <figcaption>Embeding images inside a &lt;figure> with &lt;img> plus &lt;figcaption></figcaption>
+            </figure>
+            
+            <h2>Tables</h2>
+            <table>
+              <caption>Table Example normal</caption>
+              <thead>
+                <tr>
+                <th>Tag -th</th>
+                <th>Description -th</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr> <td>&lt;table&gt; -td</td> <td>Defines a table -td</td>
+                </tr>
+                <tr>
+                <td>&lt;th&gt;</td> <td>Defines a header cell in a table</td>
+                </tr>
+                <tr>
+                <td>&lt;tr&gt;</td> <td>Defines a row in a table</td>
+                </tr>
+                <tr>
+                <td>&lt;td&gt;</td> <td>Defines a cell in a table</td>
+                </tr>
+                <tr>
+                <td>&lt;caption&gt;</td> <td>Defines a table caption</td>
+                </tr>
+                <tr>
+                <td>&lt;colgroup&gt;</td> <td>Specifies a group of one or more columns in a table for formatting</td>
+                </tr>
+                <tr>
+                <td>&lt;col&gt;</td> <td>Specifies column properties for each column within a &lt;colgroup&gt; element</td>
+                </tr>
+                <tr>
+                <td>&lt;thead&gt;</td> <td>&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&lt;tbody&gt;</td> <td>Groups the body content in a table</td>
+                </tr>
+                <tr>
+                <td>&lt;tfoot&gt;</td> <td>Groups the footer content in a table
+                </td>
+                </tr>
+              </tbody>
+                <tfoot>
+                  <tr>
+                    <td>-foot-td</td><td>-foot-td</td>
+                  </tr>
+                </tfoot>
+              </table>
+            <table class="closed">
+              <caption>Table Example class "closed"</caption>
+              <thead>
+                <tr>
+                <th>Tag -th</th>
+                <th>Description -th</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr> <td>&lt;table&gt; -td</td> <td>Defines a table -td</td>
+                </tr>
+                <tr>
+                <td>&lt;th&gt;</td> <td>Defines a header cell in a table</td>
+                </tr>
+                <tr>
+                <td>&lt;tr&gt;</td> <td>Defines a row in a table</td>
+                </tr>
+                <tr>
+                <td>&lt;td&gt;</td> <td>Defines a cell in a table</td>
+                </tr>
+                <tr>
+                <td>&lt;caption&gt;</td> <td>Defines a table caption</td>
+                </tr>
+                <tr>
+                <td>&lt;colgroup&gt;</td> <td>Specifies a group of one or more columns in a table for formatting</td>
+                </tr>
+                <tr>
+                <td>&lt;col&gt;</td> <td>Specifies column properties for each column within a &lt;colgroup&gt; element</td>
+                </tr>
+                <tr>
+                <td>&lt;thead&gt;</td> <td>&nbsp;</td>
+                </tr>
+                <tr>
+                <td>&lt;tbody&gt;</td> <td>Groups the body content in a table</td>
+                </tr>
+                <tr>
+                <td>&lt;tfoot&gt;</td> <td>Groups the footer content in a table
+                </td>
+                </tr>
+              </tbody>
+                <tfoot>
+                  <tr>
+                    <td>-foot-td</td><td>-foot-td</td>
+                  </tr>
+                </tfoot>
+              </table>
+          <h2>Lists, both unnumbered and numbered</h2>
+          <p>Unnumbered lists use &lt;ul> in combination with one or more &lt;li> elements:</p>
+             <ul>
+                <li>ul1 -li</li>
+                <li>ul2 -li</li>
+                <li>ul3 with a lot of text: Vestibulum tempus urna vitae neque vehicula sit amet tristique felis ultrices. Phasellus eu laoreet mauris. Integer sit amet ante nec ipsum euismod hendrerit et eget sapien. Duis velit ante, semper nec dapibus adipiscing, pellentesque vitae orci. Etiam adipiscing, justo ut faucibus placerat, neque libero accumsan ipsum, non pellentesque ligula nibh id justo. </li>
+             </ul>
+           <p>Numbered lists use &lt;ol> in combination with one or more &lt;li> elements:</p>  
+             <ol>
+                <li>ol1 -li</li>
+                <li>ol2 with a lot of text: Vestibulum tempus urna vitae neque vehicula sit amet tristique felis ultrices. Phasellus eu laoreet mauris. Integer sit amet ante nec ipsum euismod hendrerit et eget sapien. Duis velit ante, semper nec dapibus adipiscing, pellentesque vitae orci. Etiam adipiscing, justo ut faucibus placerat, neque libero accumsan ipsum, non pellentesque ligula nibh id justo.-li</li>
+                <li>ol3 -li</li>
+              </ol>
+          <p>List in colums use class list_col2 or list_col3, using 2 or 3 colums</p>
+              <ul class="list_col3">
+				  <li>markup</li><li>css</li><li>clike</li><li>javascript</li>
+				  <li>bash</li><li>batch</li><li>java</li><li>perl</li><li>php</li><li>python</li><li>sql</li>
+			  </ul>
+          <h2>Main.css</h2>
+          <p>As described above, the file main.css defines divergend and new styles for the portfolio. Some of the styles are used for images and tables and so on.
+
+          One of the more special styles I used in this page,  show the authorship as horizontal boxes. These are called <a href="https://www.w3schools.com/css/css3_flexbox.asp">flexboxes</a> and are part of the css layout capabilities that can break the linear structure of the vertical box layout, HTML is based on. Boxes, that are in a horizontal layout schema usuallay use an HTML element as a container and another one for the box. Here is the code for the authorship boxes:</p>
+
+<pre><code class="language-markup">    <section id="authors" class="columns">
+            
+        <div class="col box">
+        <p>Author:<br>
+        Andreas Müller<br>
+        Universität Trier<br>        
+        <i class="fa fa-envelope-o" aria-hidden="true"></i> muellea@uni-trier.de
+        </p>
+        </div>
+        
+        <div class="col box">
+        <p>
+        Co-Author:
+        Andreas Müller<br>
+        Universität Trier
+        </p>
+        </div>
+        
+    </section></code></pre>
+    
+        </section>
+        
+        <section>
+            <h1>Code Highlighting</h1>
+            <p>Whenever code examples are given in the portfolio, we can make use the <a href="https://prismjs.com/">prism</a> extension, 
+            <q class="footnote indirect" cite="https://prismjs.com/" title="Prism Syntax Highlighter, Website, last visited 13.09.2021">which allows highlighting for several languages.</q></p>
+            
+            <pre><code class="language-markup"><p>Example</p></code></pre>
+        </section>
+        
+        <section>
+            <h1>Citations</h1>
+            <p>A scientific paper needs citations. Support for that is included into HTML by using blockqute, cite or q.</p>
+            <p>To get more control over the citations in a text, I included the script <a href="https://github.com/coreymwamba/citr-js">citr.js</a>
+            The javascript detects all citations in a page and builds a bibliography an the end of the article.</p>
+            <p>This page contains a few citations just to show, how it works!</p>           
+        </section>
+        
+        <section>
+            <h1>Other elements</h1>
+            <h2>Font Awesome</h2>
+            <p>In the head of the HTML document you'll find a link to the <a href="https://fontawesome.com/v4.7/icons/">font-awesome css icons</a>. They can be used e.g. inside a paragraph using the &lt;i>-element. Some examples:</p>
+            <ul class="list_col2">
+				  <li>Address: <i class="fa fa-address-card-o" aria-hidden="true"></i></li>
+                  <li>User circle: <i class="fa fa-user-circle" aria-hidden="true"></i></li>
+                  <li>External Link: <i class="fa fa-external-link" aria-hidden="true"></i></li>
+                  <li>Eye: <i class="fa fa-eye" aria-hidden="true"></i></li>
+                  <li>Info circle: <i class="fa fa-info-circle" aria-hidden="true"></i></li>
+            </ul>
+            <p>Html example:</p>
+            <pre><code class="language-markup"><!--<head>
+    ...-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--...
+    <body>
+    ...-->
+    <p><i class="fa fa-eye" aria-hidden="true"></i>Here's looking at you, kid!</p></code></pre>
+    
+            <h2>W3Schools Navigation Bar</h2>
+            <p>On W3School we find a simple responsive menu, that collapses on small screens. I adapted it slightly to fit into the portfolios html and css.</p>
+            <p>In this document the menu it at the top of the page, it uses a list of links as the menu entries, also you can define one of them as active (the active page). The css (w3menu.css) and the javascript (w3menu.js) are linked in the head part of the document.</p>
+            
+            <p>Html example:</p>
+<pre><code class="language-markup"><!--<head>
+    ...-->
+    <link rel="stylesheet" href="w3menu.css">
+    <script src="w3menu.js"></script>
+ <!--<body>
+     ...-->
+       <nav class="topnav" id="myTopnav">
+          <a class="active" href="#">Home</a>
+          <a href="#">Topics</a>
+          <a href="#">About</a>
+          <a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+             <i class="fa fa-bars"></i></a>
+       </nav></pre></code>
+        
+        
+        <h2>Big Title Image with Text</h2>
+        <p>In the head of the page you see the world map with overlayed text. The whole thing consists of text-elemnts in from of a backgound-image, which is a common technique for titels or headings of a page.</p> 
+        <p>I put the css for this into the file bg_image.css. Also this image reacts to changing the size of the browser window. This is usefull again for small screens. The id "header" is connected with the appropriate styles.</p>
+
+<pre><code class="language-markup">    <section id="header">
+        <h1>Geovisualization</h1>
+        <h2>Portfolio Winter 2021/2022</h2>
+    </section></pre></code>
+        
+        </section>
+        
+        <section>
+        <h2>Overlays</h2>
+        <p>Create a display lying over the portfolio page. Here I  use a button to show the overlay: <button onclick="ov_on('ov_divExample')">Show overlay</button></p>
+        
+        <div class="overlay" id="ov_divExample">
+            <div class="ovelem">
+                <p>Overlay Text</p>
+                
+                <figure>
+                <img src="images/background-image.png">
+                <figcaption>This is what I wanted to show as an overlay!</figcaption>
+                </figure>
+                
+                <p><button onclick="ov_off()">Back</button></p>
+            </div>
+        </div>
+        
+        <p>The code is bases on <q class="footnote indirect" cite="https://www.w3schools.com/howto/howto_css_overlay.asp" title="W3Schools: HowTo Overlay">W3schools "HowTo Overlay"</q>. The feature uses two files: overlay.css and overlay.js. Both have to declared in the HTML-head part.</p>
+        <p>In the example I used a div-element, containing the overlay content, but we can use a iframe as well, if we want to show a second HTML-document:</p>
+        
+        <button onclick="ov_on('ov_iframeExample')">Show iFrame</button>
+        
+        <div class="overlay" id="ov_iframeExample">
+            <div class="ovelem">
+                <iframe width="1000" height="600" 
+                        src="iframe_content.html" 
+                        title="Iframe">
+                </iframe>
+                           
+                <p><button onclick="ov_off()">Back</button></p>
+            </div>
+        </div>
+        </section>
+        
+    </article>
+    
+    <!-- Solution for highlighting html code -->
+    <script>
+    document.querySelectorAll("code.language-markup, code.language-html")
+        .forEach( 
+            function(element) {
+                element.innerHTML = element.innerHTML.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            }
+    );
+    </script>
+    <script src="cite/citr.js"></script>
+</body>
+</html>

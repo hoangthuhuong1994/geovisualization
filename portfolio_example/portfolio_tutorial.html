@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="MarkdownViewer++" />
+        <title>portfolio_tutorial.md</title>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="waters/light.css">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="w3menu.css">
+        <script src="w3menu.js"></script>
+        <link rel="stylesheet" href="./prism/prism.css">
+        <script src="./prism/prism.js"></script>
+      </head>
+    <body>
+    
+    <nav class="topnav" id="myTopnav">
+        <a href="portfolio_template.html">Home</a>
+        <a class="active" href="#">Tutorial</a>
+        <a href="#">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+            <i class="fa fa-bars"></i></a>
+
+    </nav>
+
+    <article>
+    
+    <!-- md content here -->
+    
+    <h1 id="portfolio-template-tutorial">Portfolio Template Tutorial</h1>
+    
+    <p>We will build our own HTML-template throughout this little tutorial. It may a ready to use template for all your pages in the your Portfolio. Therefor we go step by step and learn how to integrate each feature of the portfolio template.</p>
+    
+    <h2 id="starting-from-scratch">Starting from Scratch</h2>
+    
+    <p>To create a web page from scratch means, we are going to use a new empty text file and integrate all relevant code snippets that form a template page. Name it "template.html" for example.</p>
+    <blockquote>
+      <p>Use the same folder "portfolio" that contains all the files we need for the template and the pages your are going to create later!</p>
+    </blockquote>
+    <p>The first code snippet is a minimal <a href="https://www.quora.com/What-are-the-advantages-of-HTML5">html5</a> code to create a page:</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+  &lt;head>
+    <!-- unvisible page defintion -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is the Hello World example</title>
+  &lt;/head>
+  &lt;body>
+    <!-- visible page content -->
+    <p>Hello World!</p>
+  &lt;/body>
+&lt;/html>
+</code></pre>
+
+    <p>The example shows a line of text when opened in a browser. But there are far more lines in the code. On <a href="https://www.w3schools.com/html/html_intro.asp">W3Schools HTML-Tutorial</a> we can learn what they are for.</p>
+    <p>The next step is to define the structure of the document. For our portfolio we'll use
+the HTML elements article and section with headings and normal text paragraphs. And we put them into the body-tag (we want to replace the body part from the first code snippet).</p>
+
+<pre><code class="language-html">  &lt;body>
+    <!-- visible page content -->
+    <!-- New: page structure and content -->
+    <article>
+        <section>
+            <h1>My first page</h1>
+            <p>The content of my first page!</p>
+        </section>
+    </article>
+  &lt;/body>
+</code></pre>
+
+    <p>Now we want to add more content, to see the effect of the next step. So try to add more text with headings (h1,h2,h3-elements), paragraphs (p-element) and listings, like these:</p>
+
+<pre><code class="language-html"><!-- more content -->
+<h2>Lorem ipsum dolor sit amet</h2>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+<h3>justo duo dolores</h3>
+
+<ul>
+  <li>consetetur sadipscing elitr</li>
+  <li>dolore magna aliquyam erat</li>
+  <li>no sea takimata sanctus</li>
+  <li>vero eos et accusam</li>
+  <li>Stet clita kasd gubergren</li>
+</ul>
+</code></pre>
+
+    <p>In the next step we are adding CSS to format the HTML-structure. The <a href="https://www.w3schools.com/css/css_intro.asp">Cascading Style Sheet</a> is an essential part of a HTML-page. In our case we use <a href="https://watercss.kognise.dev/">water.css</a>, a free CSS framework, which is a minimal CSS-formatting for HTML-elements, that can be loaded into our page and that can easily be expanded to needs of the portfolio.</p>
+    <p>Waters.css is loaded into a HTML page using the link-tag within the head-element.</p>
+
+<pre><code class="language-html">  &lt;head>
+    <!-- unvisible page defintion -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is the Hello World example</title>
+  
+    <!-- NEW: portfolio features -->
+    <link rel="stylesheet" href="waters/light.css">
+  &lt;/head>
+</code></pre>
+
+    <p>Reload the page to see the changes. It looks much nicer now, doesn't it? There are CSS-styles for all HTML-elements to give the page a pleasant look, without writing complicated CSS-expressions.</p>
+    <blockquote>
+      <p>By the way, the page is also responsive, means, it adapts to different screen sizes, for example on mobile devices.</p>
+    </blockquote>
+    <p>Sometimes we want to integrate icons into the text, or somewhere onto the page. A well known and often used icon library is <a href="https://fontawesome.com/v4.7">font-awesome</a>. The example here adds a E-Mail icon in front of my mail address:</p>
+    <p>Get the icons by linking a css in the head-element:</p>
+    
+<pre><code class="language-html"><!-- NEW: icon features -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</code></pre>
+
+    <p>The we can use them for example inside a paragraphs text, paste the code somewhere into the section.</p>
+    
+<pre><code class="language-html">  <p>Author:<br>
+    Andreas Müller<br>
+    Universität Trier<br>        
+    <i class="fa fa-envelope-o" aria-hidden="true"></i> muellea@uni-trier.de
+  </p>
+</code></pre>
+
+    <blockquote>
+      <p>See the example page for other icons or visit <a href="https://fontawesome.com/v4.7/icons/">font-awesome</a>!</p>
+    </blockquote>
+    <p>OK, the last step for now, is to modify and extend <code>waters.css</code>. We need an additional CSS to do that, so let's create a new text file and call it <code>template.css</code>.</p>
+    <p>The CSS-rules we'll see below allow a broader content area, it will be set to 960px here. Also we want the content of the article to stand out from the rest of the browser window.</p>
+    
+<pre><code class="language-css">/* TEMPLATE.CSS */
+
+/* change variables from waters.css and add new once */
+:root {
+    --background-body: #ddd; /* changed */
+    --background-main: #fff; /* new */
+}
+
+body {max-width: 960px;}
+
+
+article {
+    background-color: var(--background-main);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+</code></pre>
+
+    <blockquote>
+      <p>waters.css defines also variables, that are defined in a <code>:root</code> CSS-rule. Here we overwrite and create new variables. You'll find more about <a href="https://www.w3schools.com/css/css3_variables.asp">CSS-variables on W3Schools</a>.</p>
+    </blockquote>
+    
+    <p>Last we add a link to the stylesheet, similar to the example above:</p>
+
+<pre><code class="language-html">    <!-- NEW: portfolio features -->
+    <link rel="stylesheet" href="waters/light.css">
+    <!-- NEW: template.css -->
+    <link rel="stylesheet" href="template.css">
+</code></pre>
+
+    <p>Refresh the page in the browser, to see the result!</p>
+    <p>So, that's a good starting point for your portfolio, I think. We will use some more features, as shown on the example page <!-- link!!! -->. They are explained more deeply in the chapters below.</p>
+    
+    <h2 id="a-special-authors-section">A special "Authors" section</h2>
+    
+    <p>A good scientific report has an area to display authoring information and we want to use a section with horizontal positioned boxes. Because the default in displaying boxes in HTML and CSS is a vertical positioning, we have to use a more advanced CSS-technique and will try to be really minimal in the sense of collapsing HTML-elements. The solution for a horizontal layout here is to use the css-flex layout.</p>
+    <p>Imagine you want a centered box with an alternative background color to show your personal information inside the page, we can use a div-element and combine it with a css-class.</p>
+    <p>Put this into the HTML</p>
+    
+<pre><code class="language-html"><div class="author box">
+  <p>Author:<br>
+    Andreas Müller<br>
+    Universität Trier<br>        
+    <i class="fa fa-envelope-o" aria-hidden="true"></i> muellea@uni-trier.de
+  </p>
+</div>
+</code></pre>
+
+    <p>and this into the CSS</p>
+
+<pre><code class="language-css">.author {
+    width: max-content;
+}
+
+.box {
+    background-color: var(--background);
+    padding-left: 1em;
+    padding-right: 1em;
+}
+</code></pre>
+
+    <p>But if we need two author boxes, positioned horizontally, we can use <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flex-rules</a> inside the css, and we need another container around the boxes. Replace the former div with this one:</p>
+    
+<pre><code class="language-html"><section class="columns">
+            
+  <div class="author col box">
+    <p>Author:<br>
+    Andreas Müller<br>
+    Universität Trier<br>        
+    <i class="fa fa-envelope-o" aria-hidden="true"></i> muellea@uni-trier.de
+    </p>
+  </div>
+    
+  <div class="author col box">
+    <p>
+    Co-Author:<br>
+    Andreas Müller<br>
+    Universität Trier
+    </p>
+  </div>
+  
+</section>
+</code></pre>
+
+    <p>The section element now is the container and the two div elements will become the boxes with a horizontal layout.</p>
+    <p>Also edit the CSS to implement that kind of layout.</p>
+    
+<pre><code class="language-css">.columns {
+    display: flex;
+    gap: 2em;
+}
+
+.columns .col {
+	display: flex;
+	flex: 1;
+}
+</code></pre>
+
+    <h2 id="navigation-menu">Navigation Menu</h2>
+    
+    <p>If we want to present our content on multiple pages we need a navigation with links to the single pages. Often this is done by a menu, for example at the top of the page. The menu component I choosed, can be found on <a href="https://www.w3schools.com/css/css_navbar_horizontal.asp">W3Schools</a>.</p>
+    <p>I splitted the code into two files: w3menu.css and w3menu.js, so this time we not only have a CSS but some lines of javascript, that does some action when the menu adapts to smaller screens.</p>
+    
+    <blockquote>
+      <p>By the way: the menu uses a horizontal layout. But this time not using a flex- but a <a href="https://www.w3schools.com/css/css_float_examples.asp">float-layout</a>. This was the very first approach of CSS to present HTML boxed elements horizontally by literally forcing them to display inline, and <em>"floating"</em> with the text.</p>
+    </blockquote>
+    
+    <p>Again we need to link the needed files in the head of the document:</p>
+    
+<pre><code class="language-html">  <!-- W3Schools menu -->
+  <link rel="stylesheet" href="w3menu.css">
+  &lt;script src="w3menu.js"></script>
+</code></pre>
+
+    <p>And then we use some dummy links as the menu of the page:</p>
+    
+<pre><code class="language-html"><!-- top, after opening body tag-->
+    <nav class="topnav" id="myTopnav">
+        <a class="active" href="#">Home</a>
+        <a href="#">Topics</a>
+        <a href="#">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+            <i class="fa fa-bars"></i></a>
+    </nav>
+</code></pre>
+
+    <blockquote>
+      <p>This menu collapse on small screens and shows a hamburger-like menu icon: <i class="fa fa-bars"></i> - The layout of the menu therefor changes and displays its items vertically.</p>
+    </blockquote>
+    
+    <p>To be consistent with the colors of waters.css and our own "template.css" we are going to set some additional color variables that are used by the menu (see "w3menu.css"), too:</p>
+    
+<pre><code class="language-css">/* added into :root */ 
+    --dark: #333;
+    --text-reversed: #f2f2f2; 
+    --reversed-hover: #eee;
+    --accent: #6699dd;
+</code></pre>
+
+    <p>To link a menu item to a different page can be done by changing one of the menu links (<code>&lt;a href="#"></code>) to an existing HTML-file. Without specifying any path, the linked file must be in the same directory.</p>
+    
+<pre><code class="language-html"><!-- top, after opening body tag-->
+    <nav class="topnav" id="myTopnav">
+        <a class="active" href="#">Home</a>
+        <a href="#">Topics</a>
+        <!-- changed the link to iframe_content.html -->
+        <a href="iframe_content.html">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+            <i class="fa fa-bars"></i></a>
+    </nav>
+</code></pre>    
+
+    <h2 id="header-with-picture">Header with picture</h2>
+    
+    <p>The first page of Website often shows an image or a logo to catch the attention of the reader. In the portfolio template page it is a little abstract world map, that lays in background, behind the Website main title.</p>
+    <p>To achieve this, I grouped the menu and the title image into a HTML-header element. Inside the header the nav-tag is followed by a section with id "header", containing the headings (h1 and h2). This section with id=header is formatted by CSS to include an background image.</p>
+    
+    <blockquote>
+      <p>head and header are not the same in HTML. While head is an essential (but invisible) part of every HTML-document, header is an semantic page structuring element (in HTML5) to make document code more readable.</p>
+    </blockquote>
+    
+    <p>To achieve this, replace your old menu part with this new header block:</p>
+    
+<pre><code class="language-html">  &lt;header>
+        <nav class="topnav" id="myTopnav">
+            <a class="active" href="#">Home</a>
+            <a href="#">Topics</a>
+            <a href="#">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+                <i class="fa fa-bars"></i></a>
+        </nav>
+        <section id="header">
+        <h1>Geovisualization</h1>
+        <h2>Portfolio Winter 2023/2024</h2>
+        </section>
+  &lt;header>      
+</code></pre>
+
+    <p>And the CSS looks like this:</p>
+    
+    <pre><code class="language-css">#header {
+    display: block;
+    position: relative;
+    background: url('./images/background-image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    padding-top: 1em;
+    font-size: large;
+
+}
+
+#header h1, #header h2 {
+    text-align: center !important;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+#header h1 {
+    font-size: 4em;
+}
+</code></pre>
+
+    <p>You can add the CSS-rules to the "template.css" file or into an extra CSS-file, if you like the <em>component approach</em> (means <em>separating the different parts</em>). In the latter case don't forget to link the CSS in the head-tag.</p>
+    <p>When you use a header tag as a container, and a section with the id "header", the background image will be loaded. To use a different image, try to change the settings for background: url, it should always contain the valid path to your image.</p>
+    
+    <h2 id="code-highlighting">Code Highlighting</h2>
+    
+    <p>Code Highlighting is done by <a href="https://prismjs.com/">prism</a>. It uses CSS and javascript to style a nested block of pre and code tags. Simply add the links in the head element and put the examples into the block. Use the class for your language in pre and let prism do the rest. Only for showing HTML-examples we need an additional javascript to "escape" the HTML relevant signs like <code>&lt;</code> or <code>&gt;</code>.</p>
+    
+    <p>Put this into the head-element:</p>
+    
+<pre><code class="language-html">    <!-- code highlighting -->
+    <link rel="stylesheet" href="./prism/prism.css">
+    <script src="./prism/prism.js"></script>
+</code></pre>
+
+    <p>Add this somewhere in an article/section:</p>
+    
+<pre><code class="language-html"><pre><code class="language-markup"> <p>some html code</p> </code></pre>    
+</code></pre>
+
+    <p>And put this script bevor the closing body tag:</p>
+    
+<pre><code class="language-html">    <!-- Solution for highlighting html code -->
+    &lt;script>
+    document.querySelectorAll("code.language-markup, code.language-html")
+        .forEach( 
+            function(element) {
+                element.innerHTML = element.innerHTML.replace(/&lt;/g, "&amp;lt;").replace(/>/g, "&amp;gt;").replace(/"/g, "&amp;quot;").replace(/'/g, "&amp;#039;");
+            }
+    );
+    &lt;/script>
+</code></pre>
+
+    <blockquote>
+      <p>Inside the prism directory, you'll find a list with the available languages!</p>
+    </blockquote>
+    
+    <h2 id="citations">Citations</h2>
+    
+    <p>
+      <a href="https://github.com/coreymwamba/citr-js">Citr.js</a> is a tiny Javascript which searches a HTML-page (the DOM) for quotes.</p>
+    <p>In html itself we have <a href="https://www.w3schools.com/html/html_quotation_elements.asp">two tags for citing</a>:</p>
+    
+    <ul>
+      <li>
+        <code>&lt;blockquote&gt;</code> can be used for <em>direct quotes</em> in form of a paragraph.</li>
+      <li>
+        <code>&lt;q&gt;</code> can be used inside a paragraph, inline for a short or <em>indirect quotes</em>.</li>
+    </ul>
+    
+    <p>Both elements have a "cite" and a "title" attribute to specify the quoted source. A citation then looks like this:</p>
+    
+<pre><code class="language-html"><blockquote cite="http://www.worldcat.org/title/music-of-africa/oclc/841677" title="J. H. Kwabena Nketia, 'The Music of Africa' (1974), p. 35"> 
+<p>In African societies, participation in music may be a voluntary activity 
+or an obligation imposed by one's membership in a social group. Such a social group 
+may be a descent group (a group of people who trace their ancestry back to the 
+same person), or it may be any group based on the broader societal classifications 
+of age, sex, interest or occupation.</p></blockquote>
+</code></pre>
+
+    <blockquote>
+      <p>This quote comes directly from the citr.js examples.html</p>
+    </blockquote>
+    
+    <p>Here title contains the bibliographic content and cite the (internet) source, where the title can be found.</p>
+    
+    <p>Now citr.js uses the blockquote and q-elements as well as the attributes cite and title to create links and reference list at the end of an HTML-article.</p>
+    <p>Therefore you can use CSS-classes to get that automatic behavior. Citr.js knows the classes "footnote", "marginalia", "harvard" and "indirect". </p>
+    
+    <h3 id="example-direct-blockquote">Example direct blockquote</h3>
+    
+    <p>Change the blockquote from above by adding class="footnote":</p>
+    
+<pre><code class="language-html"><blockquote class="footnote" 
+cite="http://www.worldcat.org/title/music-of-africa/oclc/841677" 
+title="J. H. Kwabena Nketia, 'The Music of Africa' (1974), p. 35"> 
+    <p>In African societies, participation in music may be a voluntary activity 
+    or an obligation imposed by one's membership in a social group. Such a social group 
+    may be a descent group (a group of people who trace their ancestry back to the 
+    same person), or it may be any group based on the broader societal classifications 
+    of age, sex, interest or occupation.</p><cite><a href="http://www.worldcat.org/title/music-of-africa/oclc/841677">J. H. Kwabena Nketia, 'The Music of Africa' (1974), p. 35</a></cite>
+</blockquote>
+</code></pre>
+
+    <p>And also, to see the effect, link the citr.js at the bottom of our HTML-article tag:</p>
+
+<pre><code class="language-html">    <article>
+    <!-- ... -->
+    
+      <!-- run citr.js -->
+      &lt;script type="text/javascript" src="./cite/citr.js"></script>	
+	</article>
+</code></pre>
+
+    <p>Added to the document, you'll see the reference/footnote that was created by citr.js.</p>
+    
+    <p>Additionally we can add CSS-styles for the elements and classes. Waters.css adds CSS to the elements, that do not work well, in my opinion, so I put two CSS-rules for quotes into template.css to unset some of the waters.css formatting:</p>
+
+<pre><code class="language-css">q {
+	border-left: unset;
+	margin: unset;
+	padding: unset;
+    font-style: unset;
+}
+
+blockquote p {
+    margin: unset;
+}
+</code></pre>
+    
+    <h3 id="example-indirect-quote">Example indirect quote</h3>
+
+    <p>There are some more possibilities using the elements blockquote and q with the different classes, but I want to concentrate on indirect quotes within a text.</p>
+    <p>The first example uses the indirect-harvard-style:</p>
+    
+<pre><code class="language-html"><p>J. H. Nketia said that <q class="harvard indirect" cite="http://www.worldcat.org/title/music-of-africa/oclc/841677" title="Kwabena Nketia 1974, p.35">
+playing music in African societies may either be voluntary
+or an obligation by belonging to a certain group or family</q>. 
+We explored this idea by following fifty groups from the Copperbelt region of Zambia over a five-year period.</p>
+</code></pre>
+
+    <p>The second uses footnote again:</p>
+
+<pre><code class="language-html"><p>Debussy <q class="footnote indirect"
+    cite="http://www.worldcat.org/title/encyclopedia-of-quotations-about-music/oclc/611526492" 
+    title="Nat Shapiro, 'An Encyclopedia of Quotations About Music' (1981) p.268">
+wanted to free music from older traditions</q>. 
+He saw it as <q class="footnote" title="ibid.">a free art gushing forth 
+- an open-air art, boundless as the elements, the wind, the sky, the sea.</q></p>
+</code></pre>
+
+    <h2 id="overlays">Overlays</h2>
+    
+    <p>Overlays are popup areas that, for example, open by clicking a link or a button and position thereself upon the text. They are often used to show images in a bigger size or presenting messages, like a progress bar. My Overlay component for the portfolio is based on a <a href="https://www.w3schools.com/howto/howto_css_overlay.asp">W3Schools example</a>.</p>
+    <p>I tried it using HTML-sections and an iframe. With HTML-sections a part of HTML code is hidden by default and popups on request. Using an iframe, the overlay will load an additional HTML-Dokument!</p>
+    <p>My Overlay comes with two files overlay.js and overlay.css, which can be linked to the HTML-head part:</p>
+    
+<pre><code class="language-html">    <!-- overlays -->
+    <link rel="stylesheet" href="overlay.css">
+    &lt;script src="overlay.js"></script>
+</code></pre>
+
+    <p>The CSS-part deals with the positioning and display of the overlay content. Every overlay defines a class "overlay" for the allover frame (e.g. a div or a section) and uses an individual id to be switched on and of by the javascript functions "ov_on" and "ov_off". The inner content frame (e.g. a div) uses the class "ovelem" (the overlay element). Inside some element should be clickable and execute ov_off. The example is the similar as the one presented in the portfolio template page:</p>
+    
+<pre><code class="language-html">    <p>Create a display lying over the portfolio page by clicking the button: 
+    <button onclick="ov_on('ov_buttonExample')">Show overlay</button></p>
+    <!-- ov_on takes the section id as an argument -->    
+    <section class="overlay" id="ov_buttonExample">
+        <div class="ovelem">
+            <p>Overlay Text</p>
+            
+            <figure>
+            <img src="images/background-image.png">
+            <figcaption>This is what I wanted to show as an overlay!</figcaption>
+            </figure>
+            <!-- click to close: execute ov_off -->
+            <p><button onclick="ov_off()">Back</button></p>
+        </div>
+    </section>
+</code></pre>
+
+    <blockquote>
+      <p>ov_on should use the exact id as the overlay element! (Here "ov_buttonExample")</p>
+    </blockquote>
+    
+    <p>If you only want to show a figure as an overlay, you can try this:</p>
+
+<pre><code class="language-html">    <p>Show just image as a figure: <button onclick="ov_on('ov_figureExample')">Show overlay</button></p>
+    <section class="overlay" id="ov_figureExample">
+        <figure class="ovelem">
+            <img src="images/background-image.png">
+            <figcaption>Click the image to close!</figcaption>
+        </figure>
+    </section>
+</code></pre>
+
+    <p>It is pretty much the same using an iframe. But it need's another html-file to display. Additionally you are able to set the size of the iframe:</p>
+
+<pre><code class="language-html">    <p>The example uses an iframe to open another HTML page: 
+        <button onclick="ov_on('ov_iframeExample')">Show iFrame</button></p>
+        
+        <section class="overlay" id="ov_iframeExample">
+            <div class="ovelem">
+                <iframe width="1000" height="600" src="iframe_content.html" title="Iframe">
+                </iframe>
+                           
+                <p><button onclick="ov_off()">Back</button></p>
+            </div>
+        </section>
+</code></pre>
+
+    <h2 id="tips">Tips</h2>
+    <ul>
+      <li>readability and structure: If you write a HTML-document your main article should contain a h1-heading. Create sections for each h2-heading.</li>
+      <li>use indentations in nested HTML-elements! (Only in pre-code boxes for code highlighting line breaks and indentations will be visible, but not in the normal display)</li>
+      <li>if you use sub-directories for pages use correct relative links to the parent directories and files (e.g. ../images/background-image.png)</li>
+    </ul>
+    
+    <p>The files tut_template.html and tut_template.css are the final result of all presented steps here. Consult them if you struggle with your own code!</p>
+    
+    <p>The page portfolio_template.html uses main.css. The CSS definitions are similar to those in this tutorial, but more complete. Working with templates for your portfolio better use main.css as well!</p>
+    <!-- md content ends here -->
+
+    <!-- Solution for highlighting html code -->
+    <script>
+    document.querySelectorAll("code.language-markup, code.language-html")
+        .forEach( 
+            function(element) {
+                element.innerHTML = element.innerHTML.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            }
+    );
+    </script>    
+<script src="cite/citr.js"></script>
+</article>
+    </body>
+</html>
+            

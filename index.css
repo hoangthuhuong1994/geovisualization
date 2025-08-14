@@ -1,0 +1,98 @@
+/* TEMPLATE.CSS */
+
+/* change variables from waters.css and add new once */
+:root {
+    --background-body: #ddd; /* changed */
+    --background-main: #fff; /* new */
+	/* added into :root */ 
+    --dark: #333;
+    --text-reversed: #f2f2f2; 
+    --reversed-hover: #eee;
+    --accent: #6699dd;
+
+}
+
+body {max-width: 960px;}
+
+
+article {
+    background-color: var(--background-main);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.columns {
+    display: flex;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+    padding: 0 10px;
+    background-color: #f2f2f2; /* Set background color */
+}
+
+.author i {
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+.author {
+    flex: 1;
+    width: max-content;
+    margin-right: 5px;
+    color: #808080;
+    line-height: 1.5; /* Adjust line height as needed */
+}
+
+
+.box {
+    background-color: var(--background);
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.columns {
+    display: flex;
+    gap: 2em;
+}
+
+.columns .col {
+	display: flex;
+	flex: 1;
+}
+
+#header {
+    display: block;
+    position: relative;
+    background: url('./images/intro.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    padding-top: 1em;
+    font-size: large;
+
+}
+
+#header h1, #header h2, #header h4 {
+    text-align: center !important;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+#header h1 {
+    font-size: 4em;
+}
+
+q {
+	border-left: unset;
+	margin: unset;
+	padding: unset;
+    font-style: unset;
+}
+
+blockquote p {
+    margin: unset;
+}

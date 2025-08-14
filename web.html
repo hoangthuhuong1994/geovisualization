@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- unvisible page defintion -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Web-Development</title>	
+		<link rel="stylesheet" href="waters/light.css">
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="index.css"> 
+		<link rel="stylesheet" href="w3menu.css">
+		<link rel="stylesheet" href="header.css">
+		<link rel="stylesheet" href="./prism/prism.css">
+		<link rel="stylesheet" href="overlay.css">
+		<script src="overlay.js"></script>
+		<script src="w3menu.js"></script>
+		<script src="./prism/prism.js"></script>
+   		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+	</head>
+	<body>
+		<nav class="topnav" id="myTopnav">
+			<a href="index.html">Home</a>
+            <a class="active" href="#">Web-Development</a>
+			<a href="geovisualization.html">Geovisualization</a>
+			<a href="gis.html">GIS</a>
+			<a href="flood.html">Flood Risk Mapping</a>
+			<a href="rusle.html">RUSLE</a>
+			<a href="conclusions.html">Conclusions</a>
+			<a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+				<i class="fa fa-bars"></i>
+			</a>
+		</nav>
+
+	<article>
+        <section id="html-section">
+            <h1>What is Web-Development?</h1>
+			<p>Web-Development, also known as website development, encompasses the processes involved in crafting, constructing and sustaining websites and web applications that run online on a browser. This field may encompass tasks such as web design, web programming and managing databases. Fundamental tools utilized in web development include programming languages like HTML (Hypertext Markup Language), CSS (Cascading Style Sheets) and JavaScript.</p>
+			<h2>Hypertext Markup Language (HTML)</h2>
+			<p>This is a text-based markup language for structuring digital documents. HTML documents can be loaded from the World Wide Web (WWW) and displayed with a web browser. In addition to the actual content, they can also contain meta-information (language, author, keywords, etc.). So-called tags describe document elements (text, images, etc.).</p>			
+			
+			<h3>HTML Tags and Codes</h3>
+			<div class="table-container">
+				<div class="table-caption">Table 1: HTML Tags and Codes</div>
+				<table>
+					<tr>
+						<th>Description</th>
+						<th>Code</th>
+					</tr>
+					<tr>
+						<td>Document type</td>
+						<td>&lt;!DOCTYPE&gt;</td>
+					</tr>
+					<tr>
+						<td>HTML document</td>
+						<td>&lt;html&gt;</td>
+					</tr>
+					<tr>
+						<td>Document head</td>
+						<td>&lt;head&gt;</td>
+					</tr>
+					<tr>
+						<td>Document body</td>
+						<td>&lt;body&gt;</td>
+					</tr>
+					<tr>
+						<td>Document title</td>
+						<td>&lt;title&gt;</td>
+					</tr>
+					<tr>
+						<td>Paragraph</td>
+						<td>&lt;p&gt;</td>
+					</tr>
+					<tr>
+						<td>Division</td>
+						<td>&lt;div&gt;</td>
+					</tr>
+					<tr>
+						<td>Hyperlink</td>
+						<td>&lt;a&gt;</td>
+					</tr>
+					<tr>
+						<td>Image</td>
+						<td>&lt;img&gt;</td>
+					</tr>
+					<tr>
+						<td>Line break</td>
+						<td>&lt;br/&gt;</td>
+					</tr>
+					<tr>
+						<td>Heading</td>
+						<td>&lt;h1&gt; to &lt;h6&gt;</td>
+					</tr>
+					<tr>
+						<td>Comment</td>
+						<td>&lt;!-- Comment --&gt;</td>
+					</tr>
+				</table>
+			</div>
+			<h3>HTML example</h3>
+			<p>The html example from <a href="https://www.w3schools.com/html/default.asp">W3schools html</a>:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Page Title&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;This is a Heading&lt;/h1&gt;
+		&lt;p&gt;This is a paragraph.&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            <h2>Cascading Style Sheets (CSS)</h2>
+            <p>CSS is a stylesheet language used for describing the presentation of a document written in a markup language such as HTML. CSS can be embedded directly into HTML documents or written into external text files. With CSS, various style attributes can be defined for HTML elements. Style statements are inherited, i.e. elements adopt the definitions of their parent element. These statements are specified in property-value pairs.</p>
+            <h3>CSS important features:</h3>
+            <ul>
+                <li>Font: font-family, font-size, font-color</li>
+                <li>Element width: width</li>
+                <li>Element height: height</li>
+                <li>Distance (outside): margin</li>
+                <li>Distance (inside): padding</li>
+                <li>Border: border</li>
+                <li>Transparency: opacity</li>
+                <li>Line-height: line-height</li>
+                <li>Comment: /* Comment */</li>
+            </ul>
+            <h3>CSS example:</h3>
+            <p>The css example from <a href="https://www.w3schools.com/html/html_css.asp">W3schools css</a>:</p>
+<pre><code class="language-html">&lt;h1 style="color:blue;"&gt;A Blue Heading&lt;/h1&gt;
+&lt;p style="color:red;"&gt;A red paragraph.&lt;/p&gt;
+</code></pre>
+
+            <h2>JavaScript</h2>
+            <p>JavaScript is a versatile scripting language that enables interactive web pages and is an essential part of web applications. Unlike HTML, which structures content and CSS, which handles page style, JavaScript provides web pages with dynamic behavior. This can include anything from animated graphics, interactive forms, and live content updates without needing to reload the page.</p>
+            <p>JavaScript runs in the client's browser and can interact with the document content through the Document Object Model (DOM), allowing developers to create rich, interactive web experiences. It can also communicate with servers, enabling web applications to be more responsive and dynamic by loading new data in the background.</p>
+            <h3>Key Concepts of JavaScript:</h3>
+            <ul>
+                <li>Variables and data types</li>
+                <li>Operators and expressions</li>
+                <li>Functions and scope</li>
+                <li>DOM manipulation</li>
+                <li>Events and event handling</li>
+                <li>Asynchronous programming and Promises</li>
+                <li>APIs and AJAX</li>
+            </ul>
+            <p>Overall, JavaScript's ability to modify both HTML and CSS and its control over the browser, makes it a crucial tool for creating dynamic and interactive web applications.</p>
+
+		</section>
+	
+	</article>  	
+	</body>
+</html>

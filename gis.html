@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- unvisible page defintion -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GIS</title>	
+		<link rel="stylesheet" href="waters/light.css">
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="index.css"> 
+		<link rel="stylesheet" href="w3menu.css">
+		<link rel="stylesheet" href="header.css">
+		<link rel="stylesheet" href="./prism/prism.css">
+		<link rel="stylesheet" href="overlay.css">
+		<script src="overlay.js"></script>
+		<script src="w3menu.js"></script>
+		<script src="./prism/prism.js"></script>
+   		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+	</head>
+	<body>
+		<nav class="topnav" id="myTopnav">
+			<a href="index.html">Home</a>
+			<a href="web.html">Web-Development</a>
+			<a href="geovisualization.html">Geovisualization</a>
+			<a class="active" href="#">GIS</a>
+			<a href="flood.html">Flood Risk Mapping</a>
+			<a href="rusle.html">RUSLE</a>
+			<a href="conclusions.html">Conclusions</a>
+			<a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+				<i class="fa fa-bars"></i>
+			</a>
+		</nav>
+
+	<article>
+        <section id="html-section">
+			<h1>What is GIS?</h1>
+			<!-- <h2>Definition</h2> -->
+			<p>As a defintion of ESRI <q class="footnote indirect" cite="https://www.esri.com/en-us/what-is-gis/overview" title="ESRI: What is GIS?"></q>, GIS is a system that creates, manages, analyzes, and maps all types of data. GIS connects data to a map, integrating location data (where things are) with all types of descriptive information (what things are like there). This provides a foundation for mapping and analysis that is used in science and almost every industry. GIS helps users understand patterns, relationships, and geographic context. The benefits include improved communication and efficiency as well as better management and decision making. There are main two GIS will be describe in this porfolio which are QGIS and ArcGIS Pro</p>
+			
+			<h2>Quantum Geographic Information System (QGIS)</h2>
+			<p>QGIS is a open-source software for creating, editing, visualizing, analyzing and publishing geospatial information. It supports a wide range of formats and offers tools for both vector and raster data, making it versatile for geography, urban planning and environmental science.</p>
+			<p>QGIS is available on Windows, macOS and Linux, it supports a wide range of data formats and offers extensive customization options through plugins. The QGIS documentation can be found in here: <a href="https://docs.qgis.org/3.34/en/docs/">Documentation for QGIS 3.34</a></p>
+			<h2>ArcGIS Pro</h2>
+			<p>Developed by Esri, it is a leading tool in geospatial analysis, offering advanced capabilities for mapping, spatial analysis, and data management. ArcGIS Pro allows users to store multiple items, such as maps, layouts, tables, and charts, in a single project and work with them as needed.</p>
+			<p>The ArcGIS Pro documentation can be found in here: <a href="https://pro.arcgis.com/en/pro-app/latest/get-started/get-started.htm">Introduction to ArcGIS Pro</a></p>
+			<h2>QGIS and ArcGIS Pro Comparison</h2>
+			<div class="table-container">
+				<div class="table-caption">Table 1: The comparison between QGIS and ArcGIS Pro</div>
+				<table>
+					<tr>
+						<th>Feature</th>
+						<th>QGIS</th>
+						<th>ArcGIS Pro</th>
+					</tr>
+					<tr>
+						<td>Cost</td>
+						<td>Free and Open-Source</td>
+						<td>Subscription-based</td>
+					</tr>
+					<tr>
+						<td>Platform Compatibility</td>
+						<td>Windows, macOS, Linux</td>
+						<td>Windows</td>
+					</tr>
+					<tr>
+						<td>User Interface</td>
+						<td>Customizable, Community-driven Plugins</td>
+						<td>Modern, Ribbon-based, Integrated with ArcGIS platform</td>
+					</tr>
+					<tr>
+						<td>Data Format Support</td>
+						<td>Extensive with native support</td>
+						<td>Extensive, with additional support through ArcGIS platform</td>
+					</tr>
+					<tr>
+						<td>Analysis and Visualization Tools</td>
+						<td>Comprehensive, Extensible through plugins</td>
+						<td>Advanced, out-of-the-box functionality</td>
+					</tr>
+					<tr>
+						<td>Community and Support</td>
+						<td>Large, active community; relies on community support</td>
+						<td>Professional support from Esri; extensive documentation and training resources</td>
+					</tr>
+				</table>
+			</div>
+
+			<h2>QGIS and ArcGIS Pro exercises</h2>	
+			<h3>QGIS exercises</h3>
+			<h4>Exercise 1: Ikea Shops</h4>
+			<p>The main tasks of this exercise are to calculate the distance between the Ikea stores and motorways. How far away are the shops from the motorway?</p>
+			<p>Below are the ready analysis data of Ikia shops and the motorway network nodes with the same coordinate reference system (CRS), which is "ETRS89 / UTM zone 32N" </p>
+			<figure>
+				<img src="images/w3/Ikea_shop.png" width="65%" height="65%">
+				<figcaption>Figure 1: Starting map for analysis, thee blues points is the Ikia shop and the motorway network nodes with Open Stress Map (OSM) as a base map</figcaption>
+			</figure>
+			<p>The data is now used to calculate the distance by using the QGIS-Processing Tool "Distance to Nearest Hub" with below setup</p>
+			<p>As a result, the new "Hub distance" layer is generated which contain data of HubName (the name of the node) and HubDist (distance value [in Meter])</p>
+			<figure>
+				<img src="images/w3/hub_attribute.png" width="75%" height="75%">
+				<figcaption>Figure 2: Hub distance attribute table</figcaption>
+			</figure>
+			<p>Further analyzing, I used the tool "Distance to Nearest Hub (line to hub)", the result shown below</p>
+			<figure>
+				<img src="images/w3/kassel.png" width="65%" height="65%">
+				<figcaption>Figure 3: The Distance (red line) from the Ikea store in Kaseel (blue point) to the nearest distance with 792 metters</figcaption>
+			</figure>
+			<h4>Exercise 2: Map of the North-Pole region</h4>
+			<p>The main task of the exercise involves creating a map of the North Pole region to visualize the drift data of the R/V POLARBJORN ship from the Coordinated Eastern Arctic Experiment (CEAREX) during 1988-1989. Which involves:</p>
+			<ul>
+				<li>Data Preparation: Importing CEAREX ASCII files, including the PBDRIFT.POS file into QGIS. These files contain detailed positions of ship and buoy drifts, crucial for analysis and visualization.</li>
+				<li>Data Import and Processing: Loading the drift data and additional vector files like the world's coastlines and a graticule dataset for enhanced visualization.</li>
+				<li>Projection Selection: North_Pole_Orthographic with id "ESRI:102035" to reduce distortion in the polar region and improve visual accuracy.</li>
+				<li>Visualization in QGIS</li>
+				<li>Extending Visualization with Line Features</li>
+				<li>Time Attribute Processing and Animation</li>
+			</ul>
+			<p>For window, I exported the animation frames as individual pictures, from that I converted to a video using the free Windows Movie Maker application. Below video is the output of the animation</p>
+			<figure>
+				<video width="640" height="480" controls>
+					<source src="images/w4_w5/ship_drift.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video> 
+				<figcaption>The out put of the Ship drift animation. The ship's location (orange) and the drifting path (blue dashed line)</figcaption>
+			</figure>
+			<h4>Exercise 3: Visualizing the Ring of Fire</h4>
+			<p>The volcanoes forming the "Ring of Fire" are visualized using different techniques. The Ring of Fire consists of volcanoes around the edges of the Pacific Ocean.</p>
+			<p><b>Ring of Fire visualization</b></p>
+			<p>A map projection with the Pacific Ocean at its center is selected. Initially, volcanoes are marked using red triangles and OSM is utilized as the underlying base map and the projection on the QGIS project is set to "WGS 84 / PDC Mercator". The map can be shown/hidden in this button: <button onclick="hide_show('avi15')">Show/Hide Image</button>
+				<figure id="avi15" class="hide-by-default">
+					<img src="images/w4_w5/volcanoes.png" width="65%" height="65%">
+					<figcaption>Figure 4: The volcanoes forming the Ring of Fire.</figcaption>
+				</figure>	
+			<p>An alternative method involves depicting the volcanoes through a heatmap, where areas with a higher concentration of volcanoes are indicated by more intense colors. The map can be shown/hidden in this button: <button onclick="hide_show('avi16')">Show/Hide Image</button>
+				<figure id="avi16" class="hide-by-default">
+					<img src="images/w4_w5/volcanoe_heatmap.png" width="85%" height="85%">
+					<figcaption>Figure 5: The volcanoes in categorized combined with heatmap.</figcaption>
+				</figure>
+				<h3>ArcGIS Pro exercises</h3>
+				<p>The ArcGIS Pro exercises are shown in the <a href="flood.html">Flood Risk Mapping</a> and <a href="rusle.html">RUSLE</a> pages.</p>		
+		</section>		
+		<script>
+		document.querySelectorAll("code.language-markup, code.language-html")
+			.forEach( 
+				function(element) {
+					element.innerHTML = element.innerHTML.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+				}
+		);
+		</script>
+		<script src="cite/citr.js"></script>
+	</article>  	
+	</body>
+</html>

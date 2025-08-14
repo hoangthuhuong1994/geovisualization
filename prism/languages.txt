@@ -1,0 +1,24 @@
+markup
+css
+clike
+javascript
+bash
+batch
+c
+cpp
+git
+json
+json5
+markdown
+markup-templating
+matlab+perl
+php
+python
+r
+shell-session
+sql
+typescrip
+yaml
+
+example:
+<pre><code class="language-css">p { color: red }</code></pre>

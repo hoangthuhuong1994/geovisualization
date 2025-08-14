@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- unvisible page defintion -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Flood Risk Mapping</title>	
+		<link rel="stylesheet" href="waters/light.css">
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="index.css"> 
+		<link rel="stylesheet" href="w3menu.css">
+		<link rel="stylesheet" href="header.css">
+		<link rel="stylesheet" href="./prism/prism.css">
+		<link rel="stylesheet" href="overlay.css">
+		<script src="overlay.js"></script>
+		<script src="w3menu.js"></script>
+		<script src="./prism/prism.js"></script>
+   		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+	</head>
+	<body>
+		<nav class="topnav" id="myTopnav">
+			<a href="index.html">Home</a>
+			<a href="web.html">Web-Development</a>
+			<a href="geovisualization.html">Geovisualization</a>
+			<a href="gis.html">GIS</a>
+			<a class="active" href="#">Flood Risk Mapping</a>
+			<a href="rusle.html">RUSLE</a>
+			<a href="conclusions.html">Conclusions</a>
+			<a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+				<i class="fa fa-bars"></i>
+			</a>
+		</nav>
+	<article>
+        <section id="html-section">
+			<h1>Flood Risk Mapping in Trier</h1>
+			<!-- <h2>Definition</h2> -->
+			<p>In this exercise, I employed various mapping techniques to describe Trier's flood risk. Leveraging my expertise, I crafted static maps presented as PNG files, dynamic GIF animations and interactive maps designed with GIS apllications.</p>			
+			<h2>Trier</h2>
+			<p>In the federal state of Rhineland-Palatinate, Trier is a city steeped in history and has a privileged location within the Moselle wine region near the border of Luxembourg. The temperate climate zone, characterized by a pronounced.</p>
+			<h2>Visualizations of the Trier city in QGIS</h2>
+			<p>The below figure is the 2D of Trier city created in QGIS</p>
+			<figure>
+				<img src="images/flood/2D.png" width="75%" height="75%">
+				<figcaption>Figure 1: The 2D view of Trier city with the OSM Standard as the base map</figcaption>
+			</figure>
+			<p>The below Figure is the 3D of Trier city created in QGIS</p>			
+			<figure>
+				<img src="images/flood/3D.png" width="75%" height="75%">
+				<figcaption>Figure 2: The 3D view of Trier city with the OSM Standard as the base map</figcaption>
+			</figure>
+			<h2>Visualizations of the Flood project in ArcGIS Pro</h2>
+			<p>The below figure is the building heights of Trier city</p>
+			<figure>
+				<img src="images/flood/building_heights.png" width="75%" height="75%">
+				<figcaption>Figure 3: The 2D view of Trier city with the OSM Standard as the base map</figcaption>
+			</figure>
+			<h2>Creating the Flood risk</h2>
+			<p>Creating Flood Levels: Based on a reference flood event in December 1993, water levels are defined for animation, spanning from 124m to 133m (Normal Null) or as a range of 3m to 12m. This is done by extracting several water levels, using a 6-hour interval with a constant rise of 0.5m per step, resulting in 19 levels.</p>
+			<p>The next steps, the geoprocessing with the python script Toolbox FloodTools.tbx are used to process, which includes "Extract Heights", "Flooded Features" and "Make Flood Time Mosaic".</p>
+			<p>The tool "Extract Height" first is used to extracts height levels using a Digital Elevation Model (DEM) and stores the created raster. After that, the "Flooded Features" tool is used to determines the vector features within an extracted water level and assigns the water level to an feature attribute</p>
+			<p>Below picture is the visualizations of the output:</p>
+			<figure>
+				<img src="images/flood/flood_map.png" width="75%" height="75%">
+				<figcaption>Figure 4: The flood risk map for the buildings and the flood heights in Trier city</figcaption>
+			</figure>
+			<p>Exporting the map as an interactive web map through ArcGIS Online offers another method for sharing. By using ArcGIS Pro, the map can be uploaded to the online account associated with an ArcGIS organization. After the map is uploaded, it can be shared on a website through a link.</p>
+			<p>To explore the interactive version of the map, click on the following button, which leads to the map hosted on ArcGIS Online: 
+			  <a href="https://www.arcgis.com/apps/mapviewer/index.html?webmap=94fa1299965d49f7bc2979a002c51ade" target="_blank">
+				<button>Trier Flood Risk Analysis Web Map</button>
+			  </a>
+			</p>
+			<h2>2D-Animation of the Flood event</h2>
+			<p>To enhance flood risk visualization, the "Make Flood Time Mosaic" is now used to assemble a Raster Mosaic with time attributes for creating time-lapse animations of flood events. This process involves transforming extracted raster data into a mosaic dataset that can visualise temporal changes, such as rising floodwaters.</p>
+			<p>The animation setup includes essential map elements and utilises ArcGIS Pro's Animation framework for dynamic storytelling through camera movements and layer adjustments. A simulated camera movement enhances the viewer's experience by providing different perspectives of Trier during the flood, starting from the northeast and following the Moselle River southward.</p>
+			<p>Blow is the 2D GIF animation output:</p>
+			<figure id="avi">
+				<img src="images/flood/flood_animation.gif" width="80%" height="80%">
+				<figcaption>A 2D animation of a flooding event in Trier</figcaption>
+			</figure>
+			<section>
+			<h2>3D-Animation of the Flood event</h2>
+			<p>For the ultimate visualization, a 3D animation showcasing a flood event is developed. This involves generating a 3D scene and transferring essential layers into it. While the DEM and the flood mosaic layer remain in 2D for clarity, buildings are rendered in 3D to provide a realistic view of the impacted areas. To conserve memory, only buildings affected by the flood are displayed.</p>		
+			<p>The 3D Flood scenario was animated in ArcGIS Pro and exported to this overlay: <button onclick="ov_on('ov_buttonExample')">Show Video</button></p>
+				<section class="overlay" id="ov_buttonExample">
+					<div class="ovelem">
+						<figure>
+							<video width="640" height="480" controls>
+								<source src="images/flood/3d_flood.mp4" type="video/mp4">
+								Your browser does not support the video tag.
+							</video> 
+							<figcaption>Video of the Flood event in Trier</figcaption>
+						</figure>
+						<p><button onclick="ov_off()">Back</button></p>
+					</div>
+				</section>
+			</section>
+
+
+		</section>
+
+	</article>  	
+	</body>
+</html>

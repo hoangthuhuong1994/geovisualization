@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- unvisible page defintion -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>RUSLE</title>	
+		<link rel="stylesheet" href="waters/light.css">
+		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="index.css"> 
+		<link rel="stylesheet" href="w3menu.css">
+		<link rel="stylesheet" href="header.css">
+		<link rel="stylesheet" href="./prism/prism.css">
+		<link rel="stylesheet" href="overlay.css">
+		<script src="overlay.js"></script>
+		<script src="w3menu.js"></script>
+		<script src="./prism/prism.js"></script>
+   		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	</head>
+	<body>
+		<nav class="topnav" id="myTopnav">
+			<a href="index.html">Home</a>
+			<a href="web.html">Web-Development</a>
+			<a href="geovisualization.html">Geovisualization</a>
+			<a href="gis.html">GIS</a>
+			<a href="flood.html">Flood Risk Mapping</a>
+			<a class="active" href="#">RUSLE</a>
+			<a href="conclusions.html">Conclusions</a>
+			<a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+				<i class="fa fa-bars"></i>
+			</a>
+		</nav>
+
+	<article>
+        <section id="html-section">
+			<h1>Soil Erosion in West-Kenya</h1>
+			<h2>Introduction</h2>
+			<p>The tasks of this project is to calculate the Revised Universal Soil Loss Equation (RUSLE) to estimates the average annual soil erosion in West-Kenya.</p>
+			<p>The RUSLE equation is as follows: A = R x K x LS x C x P, where:</p>
+			<ul>
+				<li>A: average annual soil erosion/li>
+				<li>R: Effect of precipitation</li>
+				<li>K: Soil effect</li>
+				<li>LS: Terrain properties (length&slope)</li>
+				<li>C: effects of plants, soil cover (crop)</li>
+				<li>P: Measures to protect against erosion</li>
+			</ul>
+			<h3>Map of the Study Area</h3>
+			<p>To acquaint with the study area in West-Kenya, I created a map using tiles from a global dataset to construct a DEM. These tiles were merged into a unified raster layer and reprojected into a coordinate system appropriate for the region. The map highlights major cities, rivers and water reservoirs. The projection of the map used to create the map is WGS_1984_Lambert_Azimuthal_Equal_Area.</p>
+			<figure id="avi">
+				<img src="images/rusle/study_area.png" width="80%" height="80%">
+				<figcaption>Figure 1: Overview of the Study Area</figcaption>
+			</figure>
+			<p>The study area in 3D-View</p>
+			<figure id="avi">
+				<img src="images/rusle/3D_study_area.png" width="80%" height="80%">
+				<figcaption>Figure 2: Overview in 3D-View of the Study Area</figcaption>
+			</figure>
+			<p>The other approach involves recreating the scene in QGIS and utilizing the "Qgis2threejs" plugin to generate a 3D web scene. This method requires exporting the DEM and the aspect-slope raster from ArcGIS Pro as TIF files, which are then imported into QGIS. The plugin then produces an HTML file along with associated JavaScript and CSS files, facilitating the creation of an interactive 3D web scene.</p>
+			<p>To view the study area web scene, click to the following button: <button onclick="ov_on('3d_kenia')">Show scene</button></p>
+			<section class="overlay" id="3d_kenia">
+			   <div class="ovelem">
+				 <iframe width="800" height="450" src="images/rusle/index.html" title="Iframe"></iframe>
+				 <p>Rotate the camera to see the scene.</p>
+				 <p><button onclick="ov_off()">Back</button></p>
+			   </div>
+			</section>
+		<section>
+			<h2>Calculating the LS Factor</h2>
+			<p>In the RUSLE framework, the LS-factor, which combines Length (L) and Slope (S) values, is crucial for assessing soil erosion risk. Higher L and S values indicate a greater potential for soil loss. The LS-factor is computed by multiplying corresponding pixel values of slope area by slope steepness which allows for soil erosion risk assessment on a per-pixel basis. Below are results for LS factor calculation:</p>
+			<p>L factor result, it can be shown/hidden in this button: <button onclick="hide_show('avi1')">Show/Hide Image</button>
+			<figure id="avi1" class="hide-by-default">
+				<img src="images/rusle/l_factor.png" width="60%" height="60%">
+				<figcaption>Figure 3: L factor layer</figcaption>
+			  </figure>
+			<p>S factor result, it can be shown/hidden in this button: <button onclick="hide_show('avi2')">Show/Hide Image</button>
+			<figure id="avi2" class="hide-by-default">
+				<img src="images/rusle/s_factor.png" width="60%" height="60%">
+				<figcaption>Figure 4: S factor layer</figcaption>
+			</figure>
+			<p>LS factor result, it can be shown/hidden in this button: <button onclick="hide_show('avi3')">Show/Hide Image</button>
+			<figure id="avi3" class="hide-by-default">
+				<img src="images/rusle/ls_factor.png" width="60%" height="60%">
+				<figcaption>Figure 5: LS factor layer</figcaption>
+			</figure>
+			<p>LS factor composite bands, it can be shown/hidden in this button: <button onclick="hide_show('avi4')">Show/Hide Image</button>
+			<figure id="avi4" class="hide-by-default">
+				<img src="images/rusle/ls_composite_bands.png" width="60%" height="60%">
+				<figcaption>Figure 6: LS factor composite bands ("L" is in Blue, "S" in Red)</figcaption>
+			</figure>
+			<p>LS factor for 3D-View, it can be shown/hidden in this button: <button onclick="hide_show('avi5')">Show/Hide Image</button>
+			<figure id="avi5" class="hide-by-default">
+				<img src="images/rusle/3d_ls_factor.png" width="60%" height="60%">
+				<figcaption>Figure 7: LS factor for 3D-View</figcaption>
+			</figure>
+		</section>
+		<section>
+			<h2>Calculating the C Factor</h2>
+			<p>The C factor in soil erosion models quantifies the effect of crop cover and management practices on soil erosion rates. It is pivotal in understanding how vegetation protects soil from erosion.</p>
+			<p>The Normalized Difference Vegetation Index (NDVI) is a satellite-derived measure to estimate vegetation health and coverage. NDVI values range from -1 (non-vegetated areas) to +1 (dense vegetation). The relationship between NDVI values and the C factor is modelled using nonlinear (exponential) regression, indicating how vegetation coverage (or lack thereof) affects erosion risk.</p>
+			<p>Therefore, in areas where NDVI values are high (close to 1), indicating dense and healthy vegetation, the corresponding C factor equation would generally be low (close to 0), reflecting the high level of protection against erosion provided by the vegetation cover.</p>
+			<p>C factor result, it can be shown/hidden in this button: <button onclick="hide_show('avi6')">Show/Hide Image</button>
+				<figure id="avi6" class="hide-by-default">
+					<img src="images/rusle/c_factor.png" width="60%" height="60%">
+					<figcaption>Figure 8: C factor layer (the green areas with values close to zero, significantly prevent erosion, while yellow and orange areas, indicating scarce vegetation, offer minimal protection). The blue area is an additinal layer of the water bodies.</figcaption>
+				</figure>			
+			<p>C factor in 3D-View, it can be shown/hidden in this button: <button onclick="hide_show('avi7')">Show/Hide Image</button>
+			<figure id="avi7" class="hide-by-default">
+				<img src="images/rusle/3d_c_factor.png" width="60%" height="60%">
+				<figcaption>Figure 9: C factor in 3D-View</figcaption>
+			</figure>
+			<p>C factor color composite, it can be shown/hidden in this button: <button onclick="hide_show('avi8')">Show/Hide Image</button>
+			<figure id="avi8" class="hide-by-default">
+				<img src="images/rusle/c_factor_color_composite.png" width="60%" height="60%">
+				<figcaption>Figure 10: C factor color composite</figcaption>
+			</figure>
+		</section>
+		<section>
+			<h2>Calculating the K Factor</h2>
+			<p>K-factor in soil erosion studies represents soil erodibility, indicating how susceptible soil is to erosion and the rate of runoff, largely influenced by soil texture. The K-factor is calculated using a formula that incorporates the soil's textural factors, including percentages of silt, very fine sand and clay, as well as organic matter content, soil structure class, and permeability class. K-factor has values > 0, normally < 0.4, for soils with a moderate fraction of silt*, values are in [t·h·MJ−1·cm−1].</p>
+			<p>K factor in 3D-View, it can be shown/hidden in this button: <button onclick="hide_show('avi9')">Show/Hide Image</button>
+			<figure id="avi9" class="hide-by-default">
+				<img src="images/rusle/k_factor.png" width="80%" height="80%">
+				<figcaption>Figure 11: K factor in 3D-View (the value near 0 indicates low erosion risk due to the soil's strong erosion resistance, while a value near 0.4 signifies higher erosion susceptibility, often because of a composition more prone to water erosion.)</figcaption>
+			</figure>
+		</section>
+		<section>
+			<h2>Calculating the R Factor</h2>
+			<p>The R factor is known as the rainfall erosivity factor quantifies the impact of rain's kinetic energy and its capacity to cause soil erosion. It is mainly focused on the sum of energy from extreme rain events with a maximum duration of 30 minutes, averaged annually.</p>
+			<p>R factor result, it can be shown/hidden in this button: <button onclick="hide_show('avi10')">Show/Hide Image</button>
+			<figure id="avi10" class="hide-by-default">
+				<img src="images/rusle/r_factor.png" width="60%" height="60%">
+				<figcaption>Figure 12: R factor layer (the areas depicted in light yellow indicate a lower R-factor, suggesting minimal rainfall erosivity, whereas regions shown in dark blue represent a higher R-factor, denoting significant rainfall erosivity.)</figcaption>
+			</figure>
+		</section>
+		<section>
+			<h2>RUSLE Result</h2>
+			<p>By multiplying the RUSLE factor rasters in the Raster Calculator tool generates a comprehensive soil erosion estimate, the RUSLE result is visualized as below</p>
+			<figure id="avi11">
+				<img src="images/rusle/rulse.png" width="70%" height="70%">
+				<figcaption>Figure 13: RULSE result in West-Kenia</figcaption>
+			</figure>
+			<p>To view the RULSE web scene as an overlay, click to the following button: <button onclick="ov_on('3d_rusle')">Show scene</button></p>
+			<section class="overlay" id="3d_rusle">
+			   <div class="ovelem">
+				 <iframe width="800" height="450" src="images/rusle/rulse_index.html" title="Iframe"></iframe>
+				 <p>Rotate the camera to see the scene.</p>
+				 <p><button onclick="ov_off()">Back</button></p>
+			   </div>
+			</section>
+			<p>Analyzing the result by doing a look up for values from RUSLE and all sub-factors:</p>
+			<figure id="avi12">
+				<img src="images/rusle/rulse_analysis.png" width="70%" height="70%">
+				<figcaption>Figure 14: Analyzing the RUSLE and all sub-factors</figcaption>
+			</figure>
+			<p>Case A, conditions: Gentle slopes (Low LS), intense rainfall (High R), dense vegetation cover (Low C), and soil with low erodibility (Low K). The adverse effects of high rainfall erosivity are counterbalanced by the protective influences of gentle slopes, dense vegetation, and low soil erodibility. Therefore, despite rainfall's high erosivity potential, the erosion risk remains low to moderate, highlighting the importance of vegetation cover and inherent soil properties in erosion mitigation.</p>
+			<p>Case B, conditions: Gentle slopes (Low LS) with heavy rainfall (High R) on with good vegetation cover (Low C) but on highly erodible soil (High K). This leads to potential soil erosion risk due to soil erodibility, mitigated by vegetation and conservation practices.</p>
+		</section>
+	</article>	
+	</body>
+</html>

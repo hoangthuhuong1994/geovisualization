@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water.css</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="waters/light.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="w3menu.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="./prism/prism.css">
+    <script src="./prism/prism.js"></script>
+    <!--link rel="stylesheet" href="./highlight/styles/default.css">
+    <script src="./highlight/highlight.min.js"></script-->
+    <script src="w3menu.js"></script>
+    <!--script>hljs.highlightAll();</script-->
+    <link rel="stylesheet" href="overlay.css">
+    <script src="overlay.js"></script>
+</head>
+<body>
+    <!-- <header> is used for the topnav menu 
+        and section with id=header for the image/title -->
+    <header>
+        <nav class="topnav" id="myTopnav">
+            <a class="active" href="#">Home</a>
+            <a href="portfolio_tutorial.html">Tutorial</a>
+            <a href="iframe_content.html">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+                <i class="fa fa-bars"></i></a>
+
+        </nav>
+        <section id="header">
+        <h1>Geovisualization</h1>
+        <h2>Portfolio Winter 2023/2024</h2>
+        </section>
+        
+    </header>
+    
+    <!-- <article> is used for the main page content
+            using different sections, where the section with id="authors" stands out for author information -->
+    <article>
+        <hr>
+        <section id="authors" class="columns">
+            
+            <div class="col box">
+            <p>Author:<br>
+            Andreas Müller<br>
+            Universität Trier<br>        
+            <i class="fa fa-envelope-o" aria-hidden="true"></i> muellea@uni-trier.de
+            </p>
+            </div>
+            
+            <div class="col box">
+            <p>
+            Co-Author:<br>
+            Andreas Müller<br>
+            Universität Trier
+            </p>
+            </div>
+            
+            <!--div class="col box">
+            <p>
+            Co-Author:<br>
+            Andreas Müller<br>
+            Universität Trier
+            </p>
+            </div>
+            
+            <div class="col box">
+            <p>
+            Co-Author:<br>
+            Andreas Müller<br>
+            Universität Trier
+            </p>
+            </div-->
+        </section>
+        <hr>
+        
+         <nav class="topnav" id="myTopnav">
+            <a class="active" href="#">Home</a>
+            <a href="thematic_maps.html">Thematik Maps</a>
+            <a href="iframe_content.html">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+                <i class="fa fa-bars"></i></a>
+        </nav>
+        
+    </article>
+    
+    <!-- Solution for highlighting html code -->
+    <script>
+    document.querySelectorAll("code.language-markup, code.language-html")
+        .forEach( 
+            function(element) {
+                element.innerHTML = element.innerHTML.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+            }
+    );
+    </script>
+    <script src="cite/citr.js"></script>
+</body>
+</html>

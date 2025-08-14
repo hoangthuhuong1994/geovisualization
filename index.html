@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- unvisible page defintion -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Home</title>	
+		<link rel="stylesheet" href="waters/light.css">
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="w3menu.css">
+		<link rel="stylesheet" href="./prism/prism.css">
+		<link rel="stylesheet" href="overlay.css">
+		<script src="overlay.js"></script>
+		<script src="w3menu.js"></script>
+		<script src="./prism/prism.js"></script>
+		<script src="./prism/prism.js"></script>	
+   		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		<!-- Solution for highlighting html code -->
+		<script>
+			document.querySelectorAll("code.language-markup, code.language-html")
+				.forEach(function(element) {
+					element.innerHTML = element.innerHTML.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+				});
+		</script>
+
+	</head>
+	<body>
+	<header>
+		<nav class="topnav" id="myTopnav">
+			<a class="active" href="#">Home</a>
+			<a href="web.html">Web-Development</a>
+			<a href="geovisualization.html">Geovisualization</a>
+			<a href="gis.html">GIS</a>
+			<a href="flood.html">Flood Risk Mapping</a>
+			<a href="rusle.html">RUSLE</a>
+			<a href="conclusions.html">Conclusions</a>
+			<a href="javascript:void(0);" class="icon" onclick="w3menu('myTopnav')">
+				<i class="fa fa-bars"></i>
+			</a>
+		</nav>
+		<section id="header">
+			<h1>Geovisualization</h1>
+			<h2>Portfolio Winter Term 2023/2024</h2>
+			<h4>Date of Submission: 31.03.2024</h4>
+		</section>
+	</header>      
+
+	<!-- visible page content -->
+
+	<article>
+		<section id="authors" class="columns">
+			<div class="left-column">
+				<h2>Supervisor Information</h2>
+				<div class="author col box">
+					<p>
+						<i class="fa fa-user-circle" aria-hidden="true"></i><br>
+						<i class="fa fa-university" aria-hidden="true"></i><br>
+						<i class="fa fa-envelope" aria-hidden="true"></i><br>
+					</p>
+					<p>
+						Dr. Andreas Müller <br>
+						Universität Trier <br>  
+						<a style="color: blue">muellea@uni-trier.de</a>
+					</p>
+				</div>
+			</div>
+		
+			<div class="right-column">
+				<h2>Student Information</h2>
+					<div class="author col box">
+					<p>
+						<i class="fa fa-user-circle" aria-hidden="true"></i><br>
+						<i class="fa fa-id-card" aria-hidden="true"></i><br>
+						<i class="fa fa-university" aria-hidden="true"></i><br>
+						<i class="fa fa-envelope" aria-hidden="true"></i><br>   
+					</p>
+					<p>
+						Hoang Thi Thu Huong<br>
+						Student ID: 1672344<br>
+						Trier University<br>        
+						<a style="color: blue">s6thhoan@uni-trier.de</a>
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="html-section">
+			<h1>Portfolio Introduction</h1>
+			<!--<p>The content of my first page!</p> -->
+				
+			<h2>Objective and Motivation of the Portfolio</h2>
+			<p>This portfolio was developed during the Geovisualisation module in the M.sc. Geoinformatics program in the winter term of 2023/24. It encompasses the various topics covered during the course.</p>
+			<p>The Geovisualisation module aims to provide a practical understanding of Geographical Information Systems (GIS) alongside theoretical concepts and showcase the practical application of GIS tools and techniques learned during the course.</p>
+			<h2>The content of this portfolio includes</h2>
+			<ul>
+				<li>Introduction to Web-Development.</li>
+				<li>Introduction to GIS.</li>
+				<li>Theory of Geovisualization.</li>
+				<li>Analyzing Flood Risk Mapping in Trier.</li>
+				<li>Revised Universal Soil Loss Equation (RUSLE) project in West-Kenia.</li>
+				<li>Conclusions.</li>
+			</ul>
+		</section>
+	</article>
+	</body>
+</html>
